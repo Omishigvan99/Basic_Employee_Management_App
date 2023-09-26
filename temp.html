@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="top-bar">
+        <div>
+            <p>
+                Employee Management System
+            </p>
+        </div>
+        <nav>
+            <ul>
+                <li>Home /</li>
+                <li>About /</li>
+                <li>Support </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="update-main-div">
+        <label for="inText">Employee ID:</label>
+        <input type="text" required>
+        <button onclick="check()" type="button">Get</button>
+
+        <label class="update-group" id="LName" for="">Name:</label>
+        <input class="update-group" id="Name" type="text">
+
+        <label class="update-group" id="LPhno" for="">Phone no.:</label>
+        <input class="update-group" id="Phno" type="text">
+
+        <label class="update-group" id="LEmID" for="">Email ID:</label>
+        <input class="update-group" id="EmID" type="text">
+
+        <button class="update-group" type="button">Update</button>
+    </div>
+
+</html>
+
+<script>
+    check=()=>{
+        // document.getElementById("LName").style.display="inlineblock"
+        // document.getElementById("LPhno").style.display="inlineblock"
+        // document.getElementById("LEmID").style.display="inlineblock"
+        // document.getElementById("Name").style.display="inlineblock"
+        // document.getElementById("Phno").style.display="inlineblock"
+        // document.getElementById("EmID").style.display="inlineblock"
+
+        var arr=document.getElementsByClassName("update-group")
+
+        for (const item of arr) {
+            item.style.display="block"
+        }
+    }
+</script>

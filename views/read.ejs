@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/header.ejs") %>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+
+            <div class="read-search-div">
+                <form class="read-search-form" action="/Home/Read/Search" method="POST">
+                    <label for="search"> Search By: </label>
+
+                    <select name="search" id="search">
+                        <option value="all">All</option>
+                        <option value="empid">ID</option>
+                        <option value="name">Name</option>
+                        <option value="phno">Phone no.</option>
+                        <option value="emailid">Email ID</option>
+                    </select>
+
+                    <input type="text" id="inText" name="inText" placeholder="for all records type all" required>
+
+                    <button id="formbutton" type="submit">Search</button>
+                </form>
+            </div>
+
+            <% if(array!=null) { %>
+
+                <% if(array.length>0) { %>
+
+                    <h1 class="info-message">
+                        <%= array.length %> Records found
+                    </h1>
+
+                    <div class="read-main-div">
+                        <table class="read-table-display">
+                            <tr class="read-table-header">
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Phone No.</th>
+                                <th>Email ID</th>
+                            </tr>
+                            <% for (const item of array) { %>
+                                <tr>
+                                    <td>
+                                        <%= item.empid %>
+                                    </td>
+                                    <td>
+                                        <%= item.name %>
+                                    </td>
+                                    <td>
+                                        <%= item.phno %>
+                                    </td>
+                                    <td>
+                                        <%= item.emailid %>
+                                    </td>
+                                </tr>
+
+                                <% } %>
+                        </table>
+                    </div>
+
+                    <% }else{ %>
+                        <h1 class="info-message" style="background-color: rgb(185, 25, 25);">No Records found</h1>
+                        <% }%>
+
+                            <% }%>
+
+    </body>
+    <%- include("./partials/footer.ejs") %>
+
+</html>

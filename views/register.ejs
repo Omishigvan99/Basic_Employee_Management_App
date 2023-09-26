@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/header.ejs") %>
+
+    <body>
+        <div class="register-main-div">
+            <h2>Sign up</h2>
+    
+            <form class="register-form" action="/saveuser" method="post">
+                <label for="usernameField">Username: </label>
+                <input id="usernameField" name="username" type="text" pattern="^[a-zA-Z0-9]+$" title="must contain alpha or alpha numeric text" required autocomplete="off">
+                <label for="passwordField">Password: </label>
+                <input id="passwordField" name="password" type="password" required autocomplete="off">
+                <button type="submit">Signup</button>
+            </form>
+            <p>Already a user, <a href="/login">login.</a></p>
+        </div>
+    </body>
+    <%- include("./partials/footer.ejs") %>
+</html>
+
+
+
+    

@@ -1,0 +1,346 @@
+:root{
+    --backgroundcolor: rgb(32,40,51);
+    --foregroundcolor:rgb(255, 255, 255);
+    --backgroundcolor2:rgb(197,198,200);
+    --foregroundcolor2:rgb(32,40,51) ;
+    --accentcolor:rgb(101,158,188);
+    --boxshadow:4px 4px 8px black;
+    --textshadow:2px 2px 4px black;
+}
+
+body{
+    background-image: url("../empvec.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.top-bar{
+    position: fixed;
+    background-color: var(--backgroundcolor);
+    width:99%;
+    border-bottom: 4px solid var(--accentcolor);
+}
+
+nav{
+    float: right;
+    position: relative;
+    top: 50px;
+    right: 0%;
+    /* background-color: tomato; */
+    display: inline-block;
+    font-size: 20px;
+   
+}
+
+.top-bar div{
+    display: inline-block;
+    /* background-color: red; */
+}
+
+p{
+    display: inline-block;
+    position: relative;
+    color:var(--foregroundcolor);
+    margin :0;
+    font-size: 40px;
+    text-shadow: 4px 4px 4px black;
+}
+
+ul{
+    position: relative;
+    bottom: 15px;
+    background-color:var(--accentcolor) ;
+    border-radius: 9px;
+}
+
+li{
+    position: relative;
+    right: 10%;
+    display: inline-block;
+    font-size: 30px;
+    color: var(--foregroundcolor);
+    text-shadow: var(--textshadow);
+}
+
+li:hover{
+    cursor: pointer;
+    color: rgb(184, 184, 184);
+}
+
+span{
+    color: var(--foregroundcolor);
+    padding-left: 5px;
+}
+
+.info-message{
+    background-color: rgb(6, 187, 6);
+    color: white;
+    padding: 20px;
+}
+
+/* Login page and Register page css */
+
+.login-main-div,.register-main-div{
+    margin: auto;
+    background-color: var(--backgroundcolor2);
+    height: 20rem;
+    width: 20rem;
+    padding: 1%;
+    box-shadow: var(--boxshadow);
+    border-radius: 4px;
+}
+.login-form,.register-form{
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+.login-form>*,.register-form>*{
+    width: 100%;
+    margin-bottom: 1%;
+}
+
+.login-form>button, .register-form>button{
+    width: 25%;
+    margin-top:5% ;
+    align-self: center;
+}
+.login-main-div>p, .register-main-div>p{
+    font-size:large ;
+    text-shadow: none;
+    color: black;
+}
+/* Home page css */
+
+.home-route{
+    text-decoration: none;
+}
+
+.home-route> p,.form-button,.login-form>button , .register-form>button{
+    display: inline-block;
+    width:80%;
+    padding:5px;
+    margin-block-end: 10px;
+    background-color: var(--backgroundcolor);
+    border-radius: 8px;
+    border: 2px solid ;
+    text-align: center;
+    color: var(--foregroundcolor);
+}
+
+@keyframes animate{
+    from{transform: scale(1,1);}
+    to{transform: scale(1.2,1.2);}
+}
+.home-route>p:hover, .form-button:hover, .read-search-form button:hover, .update-main-div > button:hover, .delete-form > button:hover{
+    box-shadow: 2px 3px 4px black ;
+    animation-name: animate;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+}
+
+.home-main-div{
+    position: absolute;
+    top: 25%;
+    left: 37%;
+    background-color: var(--backgroundcolor2);
+    width: 25%;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow:var(--boxshadow);
+}
+
+/* create page css */
+
+.create-main-div{
+    display: inline-block;
+    position: absolute;
+    top: 25%;
+    left:38%;
+    width: 25%;
+    background-color:var(--backgroundcolor2);
+    border-radius: 8px;
+    box-shadow: var(--boxshadow);
+}
+
+.create-form{
+    text-align: center;
+    padding: 20px;
+}
+
+
+.create-form > *{
+    display: inline-block;
+    width:98%;
+    font-size:25px;
+    margin-bottom:10px ;
+}
+
+.create-form label{
+    text-align: left;
+    color: var(--foregroundcolor2);
+    background-color: var(--backgroundcolor2);
+    text-shadow: var(--textshadow);
+}
+
+.create-form input{
+    border-radius: 8px;
+    border: none;
+    border-bottom: 4px solid var(--accentcolor);
+}
+.create-form button{
+    width:50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Read page css */
+
+.read-search-div{
+    margin-top: 8%;
+    display: inline-block;
+    background-color:var(--backgroundcolor2);
+    width: 70%;
+    box-shadow: var(--boxshadow);
+    color: var(--foregroundcolor2);
+    padding:10px;
+    border-radius: 8px;
+}
+
+.read-search-form>*{
+    display: inline;
+    margin-right: 20px;
+}
+
+.read-search-form button,select,label,input{
+    width:20%;
+    font-size: 20px;
+}
+
+.read-search-form select{
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    background-color: var(--backgroundcolor);
+    color: var(--foregroundcolor);
+    width: 10%;
+}
+
+.read-search-form > button{
+    border-radius: 4px;
+    border:2px solid var(--foregroundcolor);
+    background-color: var(--backgroundcolor);
+    color: var(--foregroundcolor);
+    width:15%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.read-search-form > input{
+    border-radius: 4px;
+    border:none;
+    width:50%;
+}
+
+.read-main-div{
+    margin-top: 30px;
+    background-color: var(--backgroundcolor2);
+}
+
+.read-table-display{
+    border:1px solid black;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.read-table-display>tr,td{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.read-table-header{
+    background-color: var(--backgroundcolor);
+    color: var(--foregroundcolor);
+}
+
+.read-table-header>th{
+    border-left:1px solid white;
+    border-right:1px solid white;
+}
+
+.read-table-header>th:last-child{
+    border-right: none;
+}
+.read-table-header>th:first-child{
+    border-left: none;
+}
+
+/* Update and delete css */
+.update-main-div,.delete-main-div{
+    position: absolute;
+    top: 25%;
+    left: 33%;
+    width:30%;
+    background-color: var(--backgroundcolor2);
+    text-align: center;
+    padding:20px;
+    box-shadow: var(--boxshadow);
+    border-radius: 8px;
+}
+
+.update-main-div>*, .delete-form>*{
+    border-radius: 4px;
+    display: block;
+    font-size: 20px;
+    color: var(--foregroundcolor2);
+    width: 80%;
+    margin:auto ;
+    margin-bottom: 10px;
+    
+}
+
+.update-group{
+    display: none;
+}
+
+.update-main-div>input{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.update-main-div>button, .delete-form>button{
+    background-color: var(--backgroundcolor);
+    color: var(--foregroundcolor);
+    width: 30%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 2px solid ;
+}
+
+.update-main-div>label{
+    text-align: left;
+    text-shadow: var(--textshadow);
+}
+
+/* Delete page css */
+.delete-main-div{
+    text-align: center;
+}
+
+.delete-form{
+    text-align: center;
+}
+
+footer{
+    position: absolute;
+    bottom: 0%;
+}
+
+.about-text{
+    color: var(--foregroundcolor2);
+    position:absolute;
+    top: 20%;
+    text-shadow: none;
+}

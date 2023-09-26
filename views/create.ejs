@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/header.ejs") %>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+
+            <div class="create-main-div">
+                <form class="create-form" action="/Home/Create/Save" method="POST">
+                    <label for="inID">Employee ID:</label>
+                    <input id="inID" type="text" name="empid" required>
+
+                    <label for="inName">Name:</label>
+                    <input id="inName" type="text" name="name" required>
+
+                    <label for="inPhno">Phone no:</label>
+                    <input id="inPhno" type="text" name="phno" required>
+
+                    <label for="inEmID">Email ID:</label>
+                    <input id="inEmID" type="text" name="emailid" required>
+
+                    <button id="formButton" class="form-button" type="submit">Save</button>
+                </form>
+            </div>
+
+    </body>
+
+    <%- include("./partials/footer.ejs") %>
+
+</html>
+
+<script>
+    document.getElementById("formButton").addEventListener("click", (e) => {
+        ID = document.getElementById("inID").value
+        NAME = document.getElementById("inName").value
+        PHNO = document.getElementById("inPhno").value
+        EMAILID = document.getElementById("inEmID").value
+
+        const id = new RegExp("^E[0-9]{2}$", "g")
+        const name = new RegExp("^[a-z\\s.]{2,30}$", "gi")
+        const phno = new RegExp("[7-9][0-9]{9}$", "g")
+        const emailid = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$", "g")
+
+        if (!id.test(ID)) {
+            alert("Invalid ID: Must contain only char 'E' and two numbers eg:- E02")
+        }
+        else if (!name.test(NAME)) {
+            alert("Invalid Name: Must contain only chars upto 30")
+        }
+        else if (!phno.test(PHNO)) {
+            alert("Invalid Phone No.: Must contain 10 digits")
+        }
+        else if (!emailid.test(EMAILID)) {
+            alert("Invalid Email ID")
+        }
+    })
+</script>

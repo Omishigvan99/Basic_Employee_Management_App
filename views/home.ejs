@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/header.ejs") %>
+
+    <body>
+        <%- include("./partials/nav.ejs") %> 
+        <div class="home-main-div">
+    
+            <a class="home-route" href="/Home/Create">
+                <p>Create Records</p>
+            </a>
+
+            <a class="home-route" href="/Home/Read">
+                <p>Read Records</p>
+            </a>
+
+            <a class="home-route" href="/Home/Update">
+                <p>Update Records</p>
+            </a>
+
+            <a class="home-route" href="/Home/Delete">
+                <p>Delete Records</p>
+            </a>
+        </div>
+    </body>
+    <%- include("./partials/footer.ejs") %>
+
+</html>

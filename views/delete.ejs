@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/header.ejs") %>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+
+            <div class="delete-main-div">
+                <div class="delete-form" action="#" method="">
+                    <label for="inID">Employee ID:</label>
+                    <input id="inID" type="text" required>
+                                   
+                    <button onclick="handleEvent()" id="deleteButton" class="delete-div-button" type="buttton">Delete</button>
+                
+                    <label id="info" for="">Message</label>
+
+                </div>
+            </div>
+    </body>
+    <%- include("./partials/footer.ejs") %>
+
+</html>
+
+<script>
+    handleEvent=()=>{
+        id=document.getElementById("inID").value
+        fetch(`/Home/Delete/${id}`.trim(),{method:"DELETE"}).then((response)=>{
+            response.json().then((data)=>{
+                document.getElementById("info").innerHTML=data.message
+            })
+        }).catch((err)=>{
+            console.log(err)
+        })
+    }
+</script>
